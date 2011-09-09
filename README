@@ -1,0 +1,18 @@
+PHP Toolkit
+
+PHP helper classes that I might need to reuse
+
+---
+
+Util class (Util.php)
+
+  + string h (string str, int $flags = ENT_QUOTES, string $encoding = 'UTF-8')
+      convenience method for htmlspecialchars with default values
+
+  + boolean isPost ()
+      checks if current request was made by POST
+
+  + void redirect (string $url, int $status_code = 302)
+      redirects current request to $url with a default HTTP status code of 302
+      writes HTML anchor tag if headers already sent
+      exits process after redirecting
