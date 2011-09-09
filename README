@@ -6,7 +6,7 @@ PHP helper classes that I might need to reuse
 
 Util class (Util.php)
 
-  + string h (string str, int $flags = ENT_QUOTES, string $encoding = 'UTF-8')
+  + string h (string $str, int $flags = ENT_QUOTES, string $encoding = 'UTF-8')
       convenience method for htmlspecialchars with default values
 
   + boolean isPost ()
