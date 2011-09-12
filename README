@@ -41,3 +41,25 @@ PDOPostgreSql
       used to execute a statement and count the number of affected rows after
       use with UPDATE, DELETE, CREATE TABLE and other such SQL statements
       parameters are identical to select method
+
+Template
+
+  + Template (string $path)
+
+  - void setPath (string $path)
+      throws Exception if $path is invalid
+
+  - void assign (string $key, string $val = null)
+      throws InvalidArgumentException if $key equals 'this'
+
+  - void assignRef (string &$key, string &$val = null)
+      throws InvalidArgumentException if $key equals 'this'
+
+  - void clearAll ()
+
+  - void clear (string $key)
+
+  - string output (boolean $ref = false)
+
+  - void display (boolean $ref = false)
+      echos output to client
