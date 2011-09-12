@@ -4,7 +4,7 @@ PHP helper classes that I might need to reuse
 
 ---
 
-Util class (Util.php)
+Util
 
   + string h (string $str, int $flags = ENT_QUOTES, string $encoding = 'UTF-8')
       convenience method for htmlspecialchars with default values
@@ -16,3 +16,23 @@ Util class (Util.php)
       redirects current request to $url with a default HTTP status code of 302
       writes HTML anchor tag if headers already sent
       exits process after redirecting
+
+PDOPostgreSql
+
+  + PDOPostgreSql (string $host, string $user, string $pass, string $name = null)
+      creates the PDO object with the host, user, pass and database name specified
+      database name is optional and if left out will create a connection without selecting a database. you can select the database later using SQL
+
+  - array select (string $sql, array $values = array(), boolean $use_cached = true)
+      used to SELECT rows from the database that matches the SQL statement
+      will return all matching rows in one go so this method is not advised if dealing with very large data sets
+      $values is an optional ordered array to be used in conjunction with PDO's prepare and execute methods. The array values replace question marks in the SQL statement to prevent SQL injections
+      $use_cached allows for previously prepared SQL statements to be reused. If set to false, then a new statement will always be prepared instead.
+
+  - int count (string $sql, array $values = array(), boolean $use_cached = true)
+      used to count the number of rows selected from the database. this is identical to the select method, but with a count() call on the results
+      parameters are identical to select method
+
+  - int update (string $sql, array $values = array(), boolean $use_cached = true)
+      used to execute a statement and count the number of affected rows after. use with UPDATE, DELETE, CREATE TABLE and other such SQL statements
+      parameters are identical to select method
