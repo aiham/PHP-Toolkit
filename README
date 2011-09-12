@@ -55,9 +55,8 @@ Template
   - void assignRef (string &$key, string &$val = null)
       throws InvalidArgumentException if $key equals 'this'
 
-  - void clearAll ()
-
-  - void clear (string $key)
+  - void clear (string $key = null)
+      if $key is empty, clears all values
 
   - string output (boolean $ref = false)
 

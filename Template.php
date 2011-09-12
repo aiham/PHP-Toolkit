@@ -29,15 +29,15 @@ class Template {
     }
   }
 
-  public function clearAll() {
-    $this->values = array();
+  public function clear ($key = null) {
+    if (is_null($key)) {
+      $this->values = array();
+    } else {
+      unset($this->values[$key]);
+    }
   }
 
-  public function clear($key) {
-    unset($this->values[$key]);
-  }
-
-  public function output($ref = false) {
+  public function output ($ref = false) {
     try {
       ob_start();
       extract($this->values, $ref ? EXTR_REFS : EXTR_OVERWRITE);
