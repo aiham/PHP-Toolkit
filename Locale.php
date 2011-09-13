@@ -52,7 +52,7 @@ class Locale {
   }
 
   public static function setSource ($source) {
-    self::$source = $source;
+    self::$source = rtrim($source, '/');
     self::$values = self::$defaults = null;
   }
 
@@ -104,7 +104,7 @@ class Locale {
       throw Exception('Locale source ' . self::$source . ' is not readable');
     }
 
-    $file = sprintf('%s/%s.%s', rtrim(self::$source, '/'), $language, self::$extension);
+    $file = sprintf('%s/%s.%s', self::$source, $language, self::$extension);
 
     if (!is_file($file)) {
       if ($optional) {
