@@ -62,3 +62,25 @@ Template
 
   - void display (boolean $ref = false)
       echos output to client
+
+Locale
+
+  + string get (string $label)
+      gets the locale string corresponding to $label in the specified locale file
+
+  + void setSource (string $source)
+      set the directory for locale files
+
+  + void setParser (string $parser)
+      set the function which parsers the language files and returns an associative array of values
+      default is json_decode()
+
+  + void setExtension (string $extension)
+      set the file extension for language files
+      default is 'json'
+
+  + void setLanguage (string $language, string $default_language = null)
+      set the language of the strings found in the locale file
+      if $language is 'ja', the locale file should be: /path/to/source/ja.json
+        (where source is /path/to/source/ and extension is json)
+      $default_language is optional. it defaults to english (en) if the english locale file exists
