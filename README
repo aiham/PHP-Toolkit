@@ -84,3 +84,10 @@ Locale
       if $language is 'ja', the locale file should be: /path/to/source/ja.json
         (where source is /path/to/source/ and extension is json)
       $default_language is optional. it defaults to english (en) if the english locale file exists
+
+ZipDirArchive extends ZipArchive
+
+  - void addDirectory (string $path, string $localname = null)
+      recursively adds a directory to the zip archive
+      optional $localname for customising the path to the directory
+      inside the archive
