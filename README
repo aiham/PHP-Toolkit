@@ -42,6 +42,9 @@ PDOPostgreSql
       use with UPDATE, DELETE, CREATE TABLE and other such SQL statements
       parameters are identical to select method
 
+  - void clearCache ()
+      for when memory needs to be conserved
+
 Template
 
   + Template (string $path)
