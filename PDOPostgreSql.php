@@ -72,4 +72,12 @@ class PDOPostgreSql {
     return $results;
   }
 
+  public function clearCache () {
+    $this->stmts = array();
+    $this->last_stmt = null;
+    if (function_exists('gc_collect_cycles')) {
+      gc_collect_cycles();
+    }
+  }
+
 }
