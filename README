@@ -47,7 +47,8 @@ PDOPostgreSql
 
 Template
 
-  + Template (string $path)
+  + Template (string $path = null)
+      $path is optional. if not set then must be set with setPath() before display() or output() are called
 
   - void setPath (string $path)
       throws Exception if $path is invalid
