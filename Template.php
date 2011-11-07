@@ -2,10 +2,12 @@
 
 class Template {
 
-  protected $values = array(), $path;
+  protected $values = array(), $path = null;
 
-  public function __construct ($path) {
-    $this->setPath($path);
+  public function __construct ($path = null) {
+    if (!is_null($path)) {
+      $this->setPath($path);
+    }
   }
 
   public function setPath ($path) {
@@ -38,6 +40,10 @@ class Template {
   }
 
   public function output ($ref = false) {
+    if (is_null($this->path)) {
+      throw Exception('Path not set');
+    }
+
     try {
       ob_start();
       extract($this->values, $ref ? EXTR_REFS : EXTR_OVERWRITE);
