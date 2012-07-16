@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/lib/Profiler.php';
+require_once dirname(__FILE__) . '/Profiler.php';
 
 header('Content-Type: text/html; charset=utf-8');
 
