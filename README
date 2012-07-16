@@ -104,7 +104,7 @@ Profiler
       $label is used in the results table
 
   + void end ()
-      finish timing a task and add it to the results to be printed
+      finish timing the most recently started task and add it to the results to be printed
 
   + void reset ()
       clear all tasks and results
