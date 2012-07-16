@@ -95,3 +95,26 @@ ZipDirArchive extends ZipArchive
       recursively adds a directory to the zip archive
       optional $localname for customising the path to the directory
       inside the archive
+
+Profiler
+
+  + void start (string $label = 'No label')
+      begin timing a task
+      tasks can be nested
+      $label is used in the results table
+
+  + void end ()
+      finish timing a task and add it to the results to be printed
+
+  + void reset ()
+      clear all tasks and results
+
+  + void printResults (string $method = 'cli')
+      print the length of the completed tasks
+      $method is used to specify where/how to print the results
+      possible values for $method are:
+        html = prints the table using html tags
+        cli = prints the table using whitespace appropriate for command line
+        error = sends the table to error_log
+
+
